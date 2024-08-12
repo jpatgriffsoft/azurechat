@@ -139,19 +139,20 @@ export const ExtensionSimilaritySearch = async (props: {
     );
 
     const searchResults = await searchClient.search(searchText, {
-      top: 3,
+      top: 3
+      //,
 
       // filter: filter,
-      vectorSearchOptions: {
-        queries: [
-          {
-            vector: embeddings.data[0].embedding,
-            fields: vectors,
-            kind: "vector",
-            kNearestNeighborsCount: 10,
-          },
-        ],
-      },
+      //vectorSearchOptions: {
+      //  queries: [
+      //    {
+      //      vector: embeddings.data[0].embedding,
+      //      fields: vectors,
+      //      kind: "vector",
+      //      kNearestNeighborsCount: 10,
+      //    },
+      //  ],
+      //},
     });
 
     const results: Array<any> = [];
